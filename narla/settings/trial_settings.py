@@ -20,7 +20,7 @@ class TrialSettings(BaseSettings):
     gpu: int = 0
     """GPU ID to run on"""
 
-    maximum_episodes: int = 10_000
+    maximum_episodes: int = 20_000
     """Total number of episodes to run for"""
 
     random_seed: int = 0

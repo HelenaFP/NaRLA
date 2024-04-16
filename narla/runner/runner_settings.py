@@ -29,7 +29,7 @@ class RunnerSettings(BaseSettings):
     jobs_per_gpu: int = 2
     """Number of Jobs to put on each GPU"""
 
-    learning_rates: List[float] = (1e-4,)
+    learning_rates: List[float] = (1e-2, 1e-3, 1e-4,)
     """Learning rates for the individual neuron networks"""
 
     local_connectivity: List[bool] = (False, True)
@@ -38,7 +38,7 @@ class RunnerSettings(BaseSettings):
     neuron_types: List[NeuronTypes] = (NeuronTypes.POLICY_GRADIENT, NeuronTypes.DEEP_Q, NeuronTypes.ACTOR_CRITIC)
     """What to of neuron to use in the network"""
 
-    number_of_layers: List[int] = range(2, 10)
+    number_of_layers: List[int] = range(2, 11)
     """Total number of layers to use in the network"""
 
     number_of_neurons_per_layer: List[int] = (15,)

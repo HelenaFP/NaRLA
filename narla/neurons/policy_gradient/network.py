@@ -8,7 +8,7 @@ from narla.neurons.network import Network as BaseNetwork
 
 
 class Network(BaseNetwork):
-    def __init__(self, input_size: int, output_size: int, embedding_size: int = 128):
+    def __init__(self, input_size: int, output_size: int, embedding_size: int = 32):
         super().__init__()
 
         self._neural_network = self._build_network(
@@ -21,9 +21,7 @@ class Network(BaseNetwork):
     def _build_network(input_size: int, output_size: int, embedding_size) -> torch.nn.Sequential:
         layers = [
             torch.nn.Linear(input_size, embedding_size),
-            torch.nn.LeakyReLU(),
-            torch.nn.Linear(embedding_size, embedding_size),
-            torch.nn.LeakyReLU(),
+            torch.nn.LeakyReLU(0.3),
             torch.nn.Linear(embedding_size, output_size),
         ]
 
