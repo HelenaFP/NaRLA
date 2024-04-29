@@ -40,11 +40,19 @@ narla scripts/run_jobs.py \
 ## Visualizing results
 ### Visualizing network performance (Cart-Pole environment)
 
-![trained_agent.mp4](figures/trained_agent.mp4)
+
+
+https://github.com/HelenaFP/NaRLA/assets/73249743/ae2b1da6-9c46-4e0c-8f48-1c5bc314bb22
+
+
 
 ### Visualizing network performance (Iris dataset classification)
 
-![network_activity_cl.mp4](figures/network_activity_cl.mp4)
+
+
+https://github.com/HelenaFP/NaRLA/assets/73249743/009b8148-5dfc-404b-807c-469e2d1a14fb
+
+
 
 Ground truth: <br>
 
