@@ -7,12 +7,20 @@ For installation instructions and API documentation please refer to the [docs](h
 ![network.png](figures%2Fnetwork.png)
 
 
-## Run main
+## Run main (RL task)
 ```bash 
 narla main.py \
   --trial_settings.results_directory Results \
   --environment_settings.environment CART_POLE \
   --multi_agent_network_settings.layer_settings.neuron_settings.neuron_type POLICY_GRADIENT
+```
+
+## Run main (classification task)
+```bash 
+narla main_classification.py \
+  --trial-settings.results-directory results_classification \
+  --environment-settings.environment IRIS \
+  --multi-agent-network-settings.layer-settings.neuron-settings.neuron-type DEEP_Q
 ```
 
 ## Execute runner
@@ -28,6 +36,20 @@ narla scripts/run_jobs.py \
   --number_of_layers 1 2 3 4 5 6 7 8 9 10 \
   --number_of_neurons_per_layer 5 10 15
 ```
+
+## Visualizing results
+### Visualizing network performance (Cart-Pole environment)
+
+![trained_agent.mp4](figures/trained_agent.mp4)
+
+### Visualizing network performance (Iris dataset classification)
+
+![network_activity_cl.mp4](figures/network_activity_cl.mp4)
+
+Ground truth: <br>
+
+![ground_truth.png](figures/ground_truth.png)
+
 
 ## Citation
 This repository accompanies the paper [*Giving Up Control: Neurons as Reinforcement Learning Agents*](https://arxiv.org/abs/2003.11642)
