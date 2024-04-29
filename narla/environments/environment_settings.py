@@ -1,6 +1,6 @@
 import dataclasses
 
-from narla.environments import ALL_ENVIRONMENTS, GymEnvironments
+from narla.environments import ALL_ENVIRONMENTS, GymEnvironments, ClassificationEnvironments
 from narla.settings.base_settings import BaseSettings
 
 

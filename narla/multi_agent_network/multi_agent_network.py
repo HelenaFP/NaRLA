@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 from typing import List
-
+import numpy as np
+import pandas as pd
 import torch
 
 import narla
@@ -23,7 +24,7 @@ class MultiAgentNetwork:
         network_settings: narla.multi_agent_network.MultiAgentNetworkSettings,
     ):
         self._network_settings = network_settings
-
+        self._observation_size = observation_size
         self._history = narla.history.History(storage_size=1_000_000)
         self._layers: List[narla.multi_agent_network.Layer] = self._build_layers(
             observation_size=observation_size,
