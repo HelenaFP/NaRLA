@@ -29,7 +29,7 @@ class ClassificationEnvironment(Environment):
 
     def _build_classification_environment(self, name: narla.environments.AvailableEnvironments, learn_sequence: bool) -> Tuple[DataLoader, DataLoader]:
         
-        if name.value=="Iris":
+        if name == narla.environments.ClassificationEnvironments.IRIS:
             iris = load_iris()
             X = iris.data
             y = iris.target
@@ -80,9 +80,6 @@ class ClassificationEnvironment(Environment):
     def step(self, action: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor, bool]:
         action = int(action.item())
         reward = action == self._current_label.item()
-        # print("action: ", action, flush=True)
-        # print("label: ", self._current_label.item(), flush=True)
-        # print("reward: ", reward, flush=True)
         self._episode_reward += reward
         reward = self._cast_reward(reward)
         
